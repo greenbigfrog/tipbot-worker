@@ -1,7 +1,7 @@
 FROM crystallang/crystal:0.30.1
 ADD . /src
 WORKDIR /src
-RUN crystal build --release --static -s src/tb-worker.cr
+RUN crystal build --release --static -s src/entrypoint.cr
 
 FROM debian:stretch-slim
 RUN apt-get update \
@@ -11,4 +11,4 @@ RUN apt-get update \
 
 RUN adduser --disabled-password --gecos "" docker
 USER docker
-COPY --from=0 /src/tb-worker /
+COPY --from=0 /src/entrypoint /worker

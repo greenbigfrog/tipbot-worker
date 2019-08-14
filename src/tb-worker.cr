@@ -5,5 +5,3 @@ require "http/client"
 
 require "tb"
 require "./jobs/*"
-
-Mosquito::Runner.start
