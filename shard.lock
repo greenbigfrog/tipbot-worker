@@ -1,0 +1,42 @@
+version: 1.0
+shards:
+  any_hash:
+    github: sija/any_hash.cr
+    commit: 1907068cdbfc3ef9759954194472b82f9f19c6e4
+
+  bitcoin_rpc:
+    github: citizen428/bitcoin_rpc
+    version: 0.4.1
+
+  db:
+    github: crystal-lang/crystal-db
+    version: 0.5.1
+
+  discordcr:
+    github: greenbigfrog/discordcr
+    commit: ce3a13c28e76976965d9bbaae88a02131da2b55f
+
+  mosquito:
+    github: robacarp/mosquito
+    version: 0.5.0
+
+  pg:
+    github: greenbigfrog/crystal-pg
+    commit: e12b2557682e7cbe18206c1e00a30cd83db19db7
+
+  pool:
+    github: ysbaddaden/pool
+    version: 0.2.3
+
+  raven:
+    github: sija/raven.cr
+    version: 1.5.0
+
+  redis:
+    github: stefanwille/crystal-redis
+    version: 2.1.1
+
+  tb:
+    github: greenbigfrog/tipbot-common
+    commit: 2835f37874fab7f4b67ebaef13ea860c26bcf9d2
+
