@@ -8,6 +8,7 @@ class TB::Worker::DepositJob < Mosquito::PeriodicJob
     log("There are #{new_deposits.size} pending deposits")
 
     new_deposits.each do |deposit|
+      log "---"
       log("Processing deposit: #{deposit}")
       coin = coins[deposit.coin]
       api = TB::CoinApi.new(coin, Logger.new(STDOUT), backoff: false)
