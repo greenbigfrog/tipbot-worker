@@ -1,4 +1,6 @@
 class TB::Worker::HistoryDeposits < Mosquito::QueuedJob
+  params()
+
   def perform
     coins = TB::Data::Coin.read_all
 
