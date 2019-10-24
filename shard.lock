@@ -6,7 +6,7 @@ shards:
 
   bitcoin_rpc:
     github: citizen428/bitcoin_rpc
-    version: 0.4.1
+    version: 5.0.0
 
   db:
     github: crystal-lang/crystal-db
@@ -30,7 +30,7 @@ shards:
 
   raven:
     github: sija/raven.cr
-    version: 1.5.0
+    version: 1.5.1
 
   redis:
     github: stefanwille/crystal-redis
@@ -38,5 +38,5 @@ shards:
 
   tb:
     github: greenbigfrog/tipbot-common
-    commit: 2835f37874fab7f4b67ebaef13ea860c26bcf9d2
+    commit: 454a13a0ebad03fe0a0021d147d21540cfc21f55
 
