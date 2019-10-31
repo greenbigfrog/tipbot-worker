@@ -1,10 +1,10 @@
 class TB::Worker::NewGuildJob < Mosquito::QueuedJob
-  params config_id : Int64, coin : Int32, guild_name : String, owner : Int64
+  params guild_id : Int64, coin : Int32, guild_name : String, owner : Int64
 
   def perform
     string = <<-STR
-    Thanks for adding me to your server `#{guild_name}`. By default, raining and soaking and other features are disabled by default.
-    Configure the bot by visiting https://tipbot.info/config?coin=#{coin}&config=#{config_id}.
+    Thanks for adding me to your server `#{guild_name}`. By default, raining, soaking and other features are disabled by default.
+    Configure the bot by visiting: https://tipbot.info/configuration/guild?id=#{guild_id}
     If you have any further questions, please get in touch with us at #{TB::SUPPORT}
     STR
 
