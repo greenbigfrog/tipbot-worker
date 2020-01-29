@@ -18,7 +18,7 @@ class TB::Worker::WithdrawalJob < Mosquito::QueuedJob
 
     reserve_amount = amount + cfg.tx_fee
 
-    insufficient_balance = "Please make sure you also have sufficient balance to cover the (temporary) transaction fee of #{cfg.tx_fee}. The fee will be updated after withdrawal."
+    insufficient_balance = "Please make sure you also have sufficient balance to cover the (temporary) transaction fee of #{cfg.tx_fee} #{cfg.name_short}. The fee will be updated after withdrawal."
 
     return send_msg(platform, cfg, "Please supply a valid address") unless api.validate_address(address)
     return send_msg(platform, cfg, "Please tip the other user instead of trying to send to an internal address") if api.internal?(address)
@@ -30,7 +30,7 @@ class TB::Worker::WithdrawalJob < Mosquito::QueuedJob
       when nil                    then return send_msg(platform, cfg, "Something went wrong unexpectedly. Please try again later")
       end
     end
-    send_msg(platform, cfg, "Withdrawal of #{amount} is now pending. (#{cfg.tx_fee} have been reserved, and will be returned according to actual transaction cost)\n Should be processed in a few minutes.")
+    send_msg(platform, cfg, "Withdrawal of #{amount} #{cfg.name_short} is now pending. (#{cfg.tx_fee} #{cfg.name_short} have been reserved, and will be returned according to actual transaction cost)\nShould be processed in a few minutes.")
 
     spawn do
       id = res
@@ -43,7 +43,7 @@ class TB::Worker::WithdrawalJob < Mosquito::QueuedJob
         break if w.pending == false
         sleep 5.seconds
       end
-      send_msg(platform, cfg, "Your withdrawal of #{w.amount} has been processed.")
+      send_msg(platform, cfg, "Your withdrawal of #{w.amount} #{cfg.name_short} has been processed.")
     end
   end
 

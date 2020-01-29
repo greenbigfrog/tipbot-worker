@@ -28,7 +28,7 @@ class TB::Worker::ProcessWithdrawalsJob < Mosquito::PeriodicJob
           return
         end
 
-        log "These transactions/withdrawals are pending: #{input}"
+        log "Following transactions/withdrawals are pending: #{input}"
 
         TB::Data::Coin.read.each do |coin|
           rpc = TB::CoinApi.new(coin, Logger.new(STDOUT), backoff: false)
@@ -57,7 +57,7 @@ class TB::Worker::ProcessWithdrawalsJob < Mosquito::PeriodicJob
         end
       rescue ex : PQ::PQError
         db_tx.rollback
-        raise "Something went wrong while crediting deposit: #{ex}"
+        raise "Something went wrong while processing Withdrawal: #{ex}"
       end
     end
   end
