@@ -1,5 +1,5 @@
 class TB::Worker::WebhookJob < Mosquito::QueuedJob
-  params embed : String, webhook_type : String
+  params embed : String, username : String, avatar_url : String, webhook_type : String
 
   def perform
     case webhook_type
@@ -8,8 +8,8 @@ class TB::Worker::WebhookJob < Mosquito::QueuedJob
     else                raise "Invalid webhook type"
     end
 
-    json = "{\"embeds\": [#{embed}]}"
+    json = "{\"avatar_url\": \"#{avatar_url}\", \"username\": \"#{username}\", \"embeds\": [#{embed}]}"
     res = HTTP::Client.post(webhook + "?wait=true", HTTP::Headers{"Content-Type" => "application/json"}, json)
-    raise "Error posting to webhook" unless res.success?
+    raise "Error posting to webhook: #{res.body}" unless res.success?
   end
 end
