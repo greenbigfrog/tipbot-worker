@@ -1,5 +1,6 @@
 class TB::Worker::WebhookJob < Mosquito::QueuedJob
   params embed : String, username : String, avatar_url : String, webhook_type : String
+  throttle limit: 1, period: 5
 
   def perform
     case webhook_type
