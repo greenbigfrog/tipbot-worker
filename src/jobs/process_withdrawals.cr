@@ -34,7 +34,8 @@ class TB::Worker::ProcessWithdrawalsJob < Mosquito::PeriodicJob
           rpc = TB::CoinApi.new(coin, Logger.new(STDOUT), backoff: false)
           final = Hash(String, BigDecimal).new
 
-          transactions = input[coin.id]
+          transactions = input[coin.id]?
+          next unless transactions
           next if transactions.empty?
 
           transactions.each do |x|
@@ -48,10 +49,10 @@ class TB::Worker::ProcessWithdrawalsJob < Mosquito::PeriodicJob
 
           tx = rpc.send_many(final)
 
-          fee_per_transaction = rpc.get_transaction(tx)["fee"].as_f / transactions.size
+          fee_per_transaction = BigDecimal.new(rpc.get_transaction(tx)["fee"].as_f.to_s) / transactions.size
           transactions.each do |x|
             TB::Data::Withdrawal.update_pending(x[0], false, db)
-            fee = -1 * (coin.tx_fee.to_f64 + fee_per_transaction)
+            fee = -1 * (coin.tx_fee + fee_per_transaction)
             TB::Data::Transaction.update_fee(x[3], BigDecimal.new(fee), db)
           end
         end
