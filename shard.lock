@@ -2,7 +2,7 @@ version: 1.0
 shards:
   any_hash:
     github: sija/any_hash.cr
-    commit: 1907068cdbfc3ef9759954194472b82f9f19c6e4
+    commit: 0b3a1b3690158c547ebae913634c4cb8b9bfba8d
 
   bitcoin_rpc:
     github: citizen428/bitcoin_rpc
@@ -14,11 +14,11 @@ shards:
 
   discordcr:
     github: greenbigfrog/discordcr
-    commit: ce3a13c28e76976965d9bbaae88a02131da2b55f
+    commit: 7c2817547deb841548a5383b8f78ed7708622728
 
   mosquito:
     github: robacarp/mosquito
-    version: 0.5.0
+    version: 0.8.0
 
   pg:
     github: greenbigfrog/crystal-pg
@@ -30,13 +30,13 @@ shards:
 
   raven:
     github: sija/raven.cr
-    version: 1.5.5
+    version: 1.6.0
 
   redis:
     github: stefanwille/crystal-redis
-    version: 2.1.1
+    version: 2.6.0
 
   tb:
     github: greenbigfrog/tipbot-common
-    commit: a24a9438c677551e7ae2fa1774c816b983448f86
+    commit: 13dd75ad62ba664a3d4f4289275346c788e8a778
 

@@ -15,7 +15,6 @@ license: MIT
 dependencies:
   mosquito:
     github: robacarp/mosquito
-    version: 0.5.0
   discordcr:
     github: greenbigfrog/discordcr
     branch: special

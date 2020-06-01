@@ -69,7 +69,7 @@ class TB::Worker::DepositJob < Mosquito::PeriodicJob
             deposit.mark_credited(account.id, db)
             log("Deposit has been marked as processed")
 
-            log("It took #{Time.now - deposit.created_time} to process the deposit")
+            log("It took #{Time.utc - deposit.created_time} to process the deposit")
 
             # TODO send_msg
           end
