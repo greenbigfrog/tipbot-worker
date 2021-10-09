@@ -8,7 +8,7 @@ targets:
   tb-worker:
     main: src/tb-worker.cr
 
-crystal: 0.30.1
+crystal: "*"
 
 license: MIT
 
@@ -16,8 +16,10 @@ dependencies:
   mosquito:
     github: robacarp/mosquito
   discordcr:
-    github: greenbigfrog/discordcr
-    branch: special
+    github: greenbigfrog/discordcr-1
+    branch: new-special
   tb:
     github: greenbigfrog/tipbot-common
     branch: master
+  logger:
+    github: crystal-lang/logger.cr

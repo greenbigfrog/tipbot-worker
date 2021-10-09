@@ -1,4 +1,4 @@
-FROM crystallang/crystal:0.34.0
+FROM crystallang/crystal:1.1.1
 ADD . /src
 WORKDIR /src
 RUN crystal build --release --static -s src/entrypoint.cr

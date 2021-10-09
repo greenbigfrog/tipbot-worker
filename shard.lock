@@ -1,42 +1,54 @@
-version: 1.0
+version: 2.0
 shards:
   any_hash:
-    github: sija/any_hash.cr
-    commit: 0b3a1b3690158c547ebae913634c4cb8b9bfba8d
+    git: https://github.com/Sija/any_hash.cr.git
+    version: 0.2.5
+
+  backtracer:
+    git: https://github.com/Sija/backtracer.cr.git
+    version: 1.2.1
 
   bitcoin_rpc:
-    github: citizen428/bitcoin_rpc
-    version: 5.0.0
+    git: https://github.com/citizen428/bitcoin_rpc.git
+    version: 1.0.1
 
   db:
-    github: crystal-lang/crystal-db
-    version: 0.7.0
+    git: https://github.com/crystal-lang/crystal-db.git
+    version: 0.9.0
 
   discordcr:
-    github: greenbigfrog/discordcr
-    commit: 7c2817547deb841548a5383b8f78ed7708622728
+    git: https://github.com/greenbigfrog/discordcr-1.git
+    version: 0.4.0+git.commit.fcd6029e562b35c630627f0ce1f05f8f09067769
+
+  habitat:
+    git: https://github.com/luckyframework/habitat.git
+    version: 0.4.7
+
+  logger:
+    git: https://github.com/crystal-lang/logger.cr.git
+    version: 0.1.0
 
   mosquito:
-    github: robacarp/mosquito
-    version: 0.8.0
+    git: https://github.com/robacarp/mosquito.git
+    version: 0.11.0
 
   pg:
-    github: greenbigfrog/crystal-pg
-    commit: 764797e80675906c05ca7a0b02c2839f6dbb4522
+    git: https://github.com/greenbigfrog/crystal-pg.git
+    version: 0.21.1+git.commit.eac915b064d5e895d842bc81e1c2f73e3461cba6
 
   pool:
-    github: ysbaddaden/pool
-    version: 0.2.3
+    git: https://github.com/ysbaddaden/pool.git
+    version: 0.2.4
 
   raven:
-    github: sija/raven.cr
-    version: 1.6.0
+    git: https://github.com/sija/raven.cr.git
+    version: 1.9.1+git.commit.f6de0fed3e9456da0c8d17f125cf3be316a940db
 
   redis:
-    github: stefanwille/crystal-redis
-    version: 2.6.0
+    git: https://github.com/stefanwille/crystal-redis.git
+    version: 2.7.0
 
   tb:
-    github: greenbigfrog/tipbot-common
-    commit: 13dd75ad62ba664a3d4f4289275346c788e8a778
+    git: https://github.com/greenbigfrog/tipbot-common.git
+    version: 0.1.2+git.commit.80c90c1a4f494c0ce522dedeeb5896a3654f9a5f
 
