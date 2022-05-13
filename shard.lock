@@ -1,11 +1,11 @@
 version: 2.0
 shards:
   any_hash:
-    git: https://github.com/Sija/any_hash.cr.git
+    git: https://github.com/sija/any_hash.cr.git
     version: 0.2.5
 
   backtracer:
-    git: https://github.com/Sija/backtracer.cr.git
+    git: https://github.com/sija/backtracer.cr.git
     version: 1.2.1
 
   bitcoin_rpc:
@@ -30,7 +30,7 @@ shards:
 
   mosquito:
     git: https://github.com/mosquito-cr/mosquito.git
-    version: 0.11.0+git.commit.ca9660b4561139a5c73ede570c8948e46920a3a5
+    version: 1.0.0.rc1+git.commit.6f86288f198a78a95fa9ea97d1b664035899ecb5
 
   pg:
     git: https://github.com/greenbigfrog/crystal-pg.git
@@ -42,13 +42,13 @@ shards:
 
   raven:
     git: https://github.com/sija/raven.cr.git
-    version: 1.9.1+git.commit.f6de0fed3e9456da0c8d17f125cf3be316a940db
+    version: 1.9.1+git.commit.7a46c2111c24235c2aee5d91d3582e6e11602962
 
   redis:
     git: https://github.com/stefanwille/crystal-redis.git
-    version: 2.7.0
+    version: 2.8.3
 
   tb:
     git: https://github.com/greenbigfrog/tipbot-common.git
-    version: 0.1.2+git.commit.80c90c1a4f494c0ce522dedeeb5896a3654f9a5f
+    version: 0.1.2+git.commit.3dba14b443122e822a56dfe9508a423085be23a9
 

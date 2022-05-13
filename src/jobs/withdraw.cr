@@ -51,6 +51,7 @@ class TB::Worker::WithdrawalJob < Mosquito::QueuedJob
     case platform
     when "discord" then Discord::Client.new(coin.discord_token.not_nil!).create_message(destination.to_u64, msg)
     when "twitch" then log "Not implemented yet" # TODO
+    else log "Not implemented yet: [#{platform}] #{msg}" # TODO
     end
   end
 end

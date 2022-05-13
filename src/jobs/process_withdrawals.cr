@@ -31,12 +31,12 @@ class TB::Worker::ProcessWithdrawalsJob < Mosquito::PeriodicJob
         log "Following transactions/withdrawals are pending: #{input}"
 
         TB::Data::Coin.read.each do |coin|
-          rpc = TB::CoinApi.new(coin, Logger.new(STDOUT), backoff: false)
-          final = Hash(String, BigDecimal).new
-
           transactions = input[coin.id]?
           next unless transactions
           next if transactions.empty?
+
+          rpc = TB::CoinApi.new(coin, Logger.new(STDOUT), backoff: false)
+          final = Hash(String, BigDecimal).new
 
           transactions.each do |x|
             # Increase amount if duplicate address

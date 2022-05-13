@@ -1,6 +1,8 @@
 class TB::Worker::NewGuildJob < Mosquito::QueuedJob
+  include Mosquito::RateLimiter
+
   params guild_id : Int64, coin : Int32, guild_name : String, owner : Int64
-  throttle limit: 2, period: 60
+  throttle limit: 2, per: 60.seconds
 
   def perform
     string = <<-STR
